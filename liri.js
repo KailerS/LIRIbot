@@ -20,13 +20,30 @@ function searchSpotify(){
     spotifyKey
     .search({ type: 'track', query: spotifyTerm })
         .then(function(response) {
-            console.log(response.tracks.items[0]);
+            console.log(`The artist is ${response.tracks.items[0].artists[0].name}`);
+            console.log(`The title of the track is ${response.tracks.items[0].name}`);
+            console.log(`A preview can be found at ${response.tracks.items[0].preview_url}`);
+            console.log(`The album name is ${response.tracks.items[0].album.name}`);
         }).catch(function(err) {
             console.log(err);
         });    
 };
 
 
-if (userCommand === command.spotify){
-    searchSpotify();
+switch (userCommand){
+    case command.concert:
+        searchConcert()
+        break;
+    case command.spotify:
+        searchSpotify()
+        break;
+    case command.movie:
+        searchMovie()
+        break;
+    case command.says:
+        doWhatItSays()
+        break;
+    default:
+        return console.log("Please select a valid command");        
+
 };
