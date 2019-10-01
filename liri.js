@@ -12,7 +12,7 @@ var userCommand = process.argv[2];
 
 var command = {
     concert: "concert-this",
-    spotify: "spotify-this",
+    spotify: "spotify-this-song",
     movie: "movie-this",
     says: "do-what-it-says",
 };
@@ -38,7 +38,8 @@ function searchConcert(term){
 
 function searchSpotify(term){
     if (!term){
-       term = "I Saw the Sign"      
+        console.log("By not entering a track name you've selected the default.")
+       term = "Dreams and Nightmares"      
     };
     spotifyKey
     .search({ type: 'track', query: term })
@@ -54,6 +55,7 @@ function searchSpotify(term){
 
 function searchMovie(term){
     if(!term){
+        console.log("By not entering a movie name you've selected the default.")
         term = "Mr.+Nobody";
     };
     axios.get(`http://www.omdbapi.com/?t=${term}&y=&plot=short&apikey=trilogy`)
