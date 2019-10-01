@@ -1,4 +1,5 @@
 require("dotenv").config();
+var moment = require('moment');
 var Spotify = require('node-spotify-api');
 var axios = require("axios");
 var fs = require("fs");
@@ -14,6 +15,25 @@ var command = {
     spotify: "spotify-this",
     movie: "movie-this",
     says: "do-what-it-says",
+};
+
+function searchConcert(term){
+    if (!term){
+        return console.log("Please Enter a Valid Search Term")
+    }
+    axios.get("https://rest.bandsintown.com/artists/" + term + "/events?app_id=codingbootcamp")
+    .then(function (response){
+        for (i=0;i<response.data.length;i++){
+        var date = response.data[i].datetime;
+        console.log(`Date: ${moment(date).format("L")}`);
+        console.log(`Name of Venue: ${response.data[i].venue.name}`);
+        console.log(`Location: ${response.data[i].venue.city}`);
+        console.log("\n")
+        };    
+
+    }).catch(function(err) {
+            console.log(err);
+    });
 };
 
 function searchSpotify(term){
@@ -46,13 +66,15 @@ function searchMovie(term){
         console.log(`Language(s): ${response.data.Language}`);
         console.log(`Plot Summary: ${response.data.Plot}`);
         console.log(`Cast: ${response.data.Actors}`);
+    }).catch(function(err) {
+        console.log(err);
     });
 }
 
 
 switch (userCommand){
     case command.concert:
-        searchConcert()
+        searchConcert(searchTerm)
         break;
     case command.spotify:
         searchSpotify(spotifyTerm)
