@@ -16,9 +16,12 @@ var command = {
     says: "do-what-it-says",
 };
 
-function searchSpotify(){
+function searchSpotify(term){
+    if (!term){
+       term = "I Saw the Sign"      
+    };
     spotifyKey
-    .search({ type: 'track', query: spotifyTerm })
+    .search({ type: 'track', query: term })
         .then(function(response) {
             console.log(`The artist is ${response.tracks.items[0].artists[0].name}`);
             console.log(`The title of the track is ${response.tracks.items[0].name}`);
@@ -29,16 +32,33 @@ function searchSpotify(){
         });    
 };
 
+function searchMovie(term){
+    if(!term){
+        term = "Mr.+Nobody";
+    };
+    axios.get(`http://www.omdbapi.com/?t=${term}&y=&plot=short&apikey=trilogy`)
+    .then(function(response){
+        console.log(`Movie Title: ${response.data.Title}`);
+        console.log(`Release Year: ${response.data.Year}`);
+        console.log(`IMDB Rating: ${response.data.Ratings[0].Value}`);
+        console.log(`Rotten Tomatoes Rating: ${response.data.Ratings[1].Value}`);
+        console.log(`Production Location: ${response.data.Country}`);
+        console.log(`Language(s): ${response.data.Language}`);
+        console.log(`Plot Summary: ${response.data.Plot}`);
+        console.log(`Cast: ${response.data.Actors}`);
+    });
+}
+
 
 switch (userCommand){
     case command.concert:
         searchConcert()
         break;
     case command.spotify:
-        searchSpotify()
+        searchSpotify(spotifyTerm)
         break;
     case command.movie:
-        searchMovie()
+        searchMovie(searchTerm)
         break;
     case command.says:
         doWhatItSays()
