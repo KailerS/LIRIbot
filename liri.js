@@ -71,7 +71,33 @@ function searchMovie(term){
     }).catch(function(err) {
         console.log(err);
     });
-}
+};
+function doWhatItSays(){
+    fs.readFile("random.txt", "utf8", function (error,data){
+        if (error){
+            console.log(error);
+        };
+        var dataArr = data.split(",")  
+        userCommand = dataArr[0];
+        searchTerm =dataArr[1];
+        spotifyTerm = dataArr[1];
+        switch (userCommand){
+            case command.concert:
+                searchConcert(searchTerm)
+                break;
+            case command.spotify:
+                searchSpotify(spotifyTerm)
+                break;
+            case command.movie:
+                searchMovie(searchTerm)
+                break;
+            default:
+                return console.log("Please select a valid command");        
+        
+        };
+         
+    });
+};
 
 
 switch (userCommand){
