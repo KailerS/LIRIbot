@@ -14,3 +14,9 @@ If no song name is given it defaults to "Dreams and Nightmares" by Meek Mill.
     * Language of the movie.
     * Plot of the movie.
     * Actors in the movie.
+if no movie title is given it will default to "Mr. Nobody"
+1. When given the input do-what-it-says the app reads the text on a text file called random.txt. Depending on what the text says it will run that command followed by song/movie/artist. 
+
+
+
+**Link to watch it in action** **https://drive.google.com/file/d/18QKa1x_f08BmacwylowBQMDMmpCWKQWH/view**
