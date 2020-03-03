@@ -36,19 +36,19 @@ const searchConcert = term => {
     });
 };
 
-function searchSpotify(term){
+const searchSpotify= term => {
     if (!term){
         console.log("By not entering a track name you've selected the default.")
        term = "Dreams and Nightmares"      
     };
     spotifyKey
     .search({ type: 'track', query: term })
-        .then(function(response) {
+        .then(response => {
             console.log(`The artist is ${response.tracks.items[0].artists[0].name}`);
             console.log(`The title of the track is ${response.tracks.items[0].name}`);
             console.log(`A preview can be found at ${response.tracks.items[0].preview_url}`);
             console.log(`The album name is ${response.tracks.items[0].album.name}`);
-        }).catch(function(err) {
+        }).catch(err => {
             console.log(err);
         });    
 };
