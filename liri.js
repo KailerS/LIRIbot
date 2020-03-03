@@ -5,9 +5,9 @@ const axios = require("axios");
 const fs = require("fs");
 const keys = require("./keys.js");
 const spotifyKey = new Spotify(keys.spotify);
-const searchTerm = process.argv.slice(3).join("+");
-const spotifyTerm = process.argv.slice(3).join(" ")
-const userCommand = process.argv[2];
+let searchTerm = process.argv.slice(3).join("+");
+let spotifyTerm = process.argv.slice(3).join(" ")
+let userCommand = process.argv[2];
 
 
 const command = {
