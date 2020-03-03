@@ -73,12 +73,12 @@ const searchMovie = term => {
     });
 };
 
-function doWhatItSays(){
-    fs.readFile("random.txt", "utf8", function (error,data){
+const doWhatItSays = () => {
+    fs.readFile("random.txt", "utf8",(error,data) => {
         if (error){
             console.log(error);
         };
-        var dataArr = data.split(",")  
+        let dataArr = data.split(",")  
         userCommand = dataArr[0];
         searchTerm =dataArr[1];
         spotifyTerm = dataArr[1];
@@ -93,13 +93,10 @@ function doWhatItSays(){
                 searchMovie(searchTerm)
                 break;
             default:
-                return console.log("Please select a valid command");        
-        
+                return console.log("Please select a valid command");       
         };
-         
     });
 };
-
 
 switch (userCommand){
     case command.concert:
