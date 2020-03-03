@@ -53,13 +53,13 @@ const searchSpotify= term => {
         });    
 };
 
-function searchMovie(term){
+const searchMovie = term => {
     if(!term){
         console.log("By not entering a movie name you've selected the default.")
         term = "Mr.+Nobody";
     };
     axios.get(`http://www.omdbapi.com/?t=${term}&y=&plot=short&apikey=trilogy`)
-    .then(function(response){
+    .then(response => {
         console.log(`Movie Title: ${response.data.Title}`);
         console.log(`Release Year: ${response.data.Year}`);
         console.log(`IMDB Rating: ${response.data.Ratings[0].Value}`);
@@ -68,10 +68,11 @@ function searchMovie(term){
         console.log(`Language(s): ${response.data.Language}`);
         console.log(`Plot Summary: ${response.data.Plot}`);
         console.log(`Cast: ${response.data.Actors}`);
-    }).catch(function(err) {
+    }).catch(err => {
         console.log(err);
     });
 };
+
 function doWhatItSays(){
     fs.readFile("random.txt", "utf8", function (error,data){
         if (error){
