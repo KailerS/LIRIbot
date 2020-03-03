@@ -1,13 +1,13 @@
 require("dotenv").config();
-var moment = require('moment');
-var Spotify = require('node-spotify-api');
-var axios = require("axios");
-var fs = require("fs");
-var keys = require("./keys.js");
-var spotifyKey = new Spotify(keys.spotify);
-var searchTerm = process.argv.slice(3).join("+");
-var spotifyTerm = process.argv.slice(3).join(" ")
-var userCommand = process.argv[2];
+const moment = require('moment');
+const Spotify = require('node-spotify-api');
+const axios = require("axios");
+const fs = require("fs");
+const keys = require("./keys.js");
+const spotifyKey = new Spotify(keys.spotify);
+const searchTerm = process.argv.slice(3).join("+");
+const spotifyTerm = process.argv.slice(3).join(" ")
+const userCommand = process.argv[2];
 
 
 var command = {
