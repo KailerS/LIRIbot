@@ -10,28 +10,28 @@ const spotifyTerm = process.argv.slice(3).join(" ")
 const userCommand = process.argv[2];
 
 
-var command = {
+const command = {
     concert: "concert-this",
     spotify: "spotify-this-song",
     movie: "movie-this",
     says: "do-what-it-says",
 };
 
-function searchConcert(term){
+const searchConcert = term => {
     if (!term){
         return console.log("Please Enter a Valid Search Term")
     }
     axios.get("https://rest.bandsintown.com/artists/" + term + "/events?app_id=codingbootcamp")
-    .then(function (response){
-        for (i=0;i<response.data.length;i++){
-        var date = response.data[i].datetime;
+    .then( response =>{
+        for ( let i=0;i<response.data.length;i++){
+        let date = response.data[i].datetime;
         console.log(`Date: ${moment(date).format("L")}`);
         console.log(`Name of Venue: ${response.data[i].venue.name}`);
         console.log(`Location: ${response.data[i].venue.city}`);
         console.log("\n")
         };    
 
-    }).catch(function(err) {
+    }).catch( err => {
             console.log(err);
     });
 };
