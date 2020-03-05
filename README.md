@@ -29,6 +29,14 @@ The list of commands is
 * movie-this
 * do-what-it-says
 
+Default spotify-this-song looks like:
+
+![Dreams and Nightmares](song.png)
+
+You can also enter the title of a song you would like to search as well:
+
+![Custom Search](customSong.png)
+
 
 
 **Link to watch it in action** **https://drive.google.com/file/d/18QKa1x_f08BmacwylowBQMDMmpCWKQWH/view**
