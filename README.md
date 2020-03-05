@@ -20,3 +20,12 @@ if no movie title is given it will default to "Mr. Nobody"
 
 
 **Link to watch it in action** **https://drive.google.com/file/d/18QKa1x_f08BmacwylowBQMDMmpCWKQWH/view**
+
+## Installs
+Requires an install of node
+
+## Deployment
+This app does not have a front end and is run in the user's console. There are no steps for deployment.
+
+## Built with 
+* Node.js
