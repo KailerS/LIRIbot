@@ -49,7 +49,11 @@ There is also the ability to add your own title to search:
 
 ![Movie Search](movie.png)
 
+The last command is do-what-it-says and this reads from the .txt file and completes the command from there:
 
+![Doing what it says](dowhat.png)
+
+In this case it is reading to do another movie command and the title "Wolf of Wall Street". It can complete any of the other 3 commands as well if that is what is written in the text file.
 
 **Link to watch it in action** **https://drive.google.com/file/d/18QKa1x_f08BmacwylowBQMDMmpCWKQWH/view**
 
