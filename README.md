@@ -37,6 +37,18 @@ You can also enter the title of a song you would like to search as well:
 
 ![Custom Search](customSong.png)
 
+concert-this can be used to see a list of upcoming concerts for an artist entered:
+
+![Concert List](concert.png)
+
+The movie-this command has a default of Mr. Nobody:
+
+![Default Movie](defaultMovie.png)
+
+There is also the ability to add your own title to search:
+
+![Movie Search](movie.png)
+
 
 
 **Link to watch it in action** **https://drive.google.com/file/d/18QKa1x_f08BmacwylowBQMDMmpCWKQWH/view**
