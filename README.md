@@ -21,7 +21,7 @@ if no movie title is given it will default to "Mr. Nobody"
 
 If no command is entered you will get this screen
 
-[No command Entered](noCommand.png)
+![No command Entered](noCommand.png)
 
 The list of commands is 
 * spotify-this-song
